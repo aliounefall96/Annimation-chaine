@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animation chaine de caractere</title>
+</head>
+<body>
+  <div id="str"></div>
+
+  <script type="text/javascript">
+  	var profil = "bonjour je m'appelle alioune fall developpeur d'application web et mobile";
+  	var car = profil.split("");
+  	var chaine = document.getElementById("str");
+
+  	(function animate(){
+  		car.length > 0 ? chaine.innerHTML += car.shift() : clearTimeout(running);
+  		var running = setTimeout(animate, 60); 
+  	})();
+  </script>
+
+</body>
+</html>
